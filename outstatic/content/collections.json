@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Inspiration",
+    "slug": "inspiration",
+    "path": "outstatic/content/inspiration",
+    "children": []
+  },
+  {
+    "title": "People",
+    "slug": "people",
+    "path": "outstatic/content/people",
+    "children": []
+  },
+  {
+    "title": "Posts",
+    "slug": "posts",
+    "path": "outstatic/content/posts",
+    "children": []
+  },
+  {
+    "title": "Resources",
+    "slug": "resources",
+    "path": "outstatic/content/resources",
+    "children": []
+  }
+]

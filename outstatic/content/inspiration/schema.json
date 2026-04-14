@@ -1,0 +1,71 @@
+{
+  "title": "inspiration",
+  "type": "object",
+  "properties": {
+    "websiteUrl": {
+      "required": true,
+      "description": "Type in the website URL",
+      "fieldType": "String",
+      "dataType": "string",
+      "title": "Website URL"
+    },
+    "videoCover": {
+      "required": false,
+      "description": "Use video as document cover",
+      "fieldType": "String",
+      "dataType": "string",
+      "title": "videoCover"
+    },
+    "description": {
+      "fieldType": "Text",
+      "dataType": "string",
+      "title": "Description"
+    },
+    "coverImage": {
+      "fieldType": "Image",
+      "dataType": "image",
+      "title": "Cover Image"
+    },
+    "tags": {
+      "title": "Tags",
+      "description": "",
+      "required": false,
+      "fieldType": "Tags",
+      "dataType": "array",
+      "values": [
+        {
+          "label": "Agency",
+          "value": "agency"
+        },
+        {
+          "value": "threeJs",
+          "label": "Three.js"
+        },
+        {
+          "value": "blender",
+          "label": "Blender"
+        },
+        {
+          "value": "gsap",
+          "label": "GSAP"
+        },
+        {
+          "value": "portfolio",
+          "label": "Portfolio"
+        },
+        {
+          "value": "webflow",
+          "label": "Webflow"
+        },
+        {
+          "value": "cms",
+          "label": "CMS"
+        },
+        {
+          "value": "markdown",
+          "label": "Markdown"
+        }
+      ]
+    }
+  }
+}

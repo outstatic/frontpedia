@@ -1,0 +1,20 @@
+{
+  "title": "people",
+  "type": "object",
+  "properties": {
+    "websiteUrl": {
+      "required": false,
+      "description": "Link to portfolio, etc...",
+      "fieldType": "String",
+      "dataType": "string",
+      "title": "Website URL"
+    },
+    "twitter": {
+      "required": false,
+      "description": "",
+      "fieldType": "String",
+      "dataType": "string",
+      "title": "Twitter"
+    }
+  }
+}

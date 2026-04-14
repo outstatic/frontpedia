@@ -1,0 +1,121 @@
+{
+  "commit": "36b7b5182671940553f87ef3aebc7462407f1c70",
+  "generated": "2026-04-13T18:41:22.374Z",
+  "metadata": [
+    {
+      "__outstatic": {
+        "commit": "80ced4ff69f8647773759acb73dc3d848424548f",
+        "hash": "2457426973",
+        "path": "outstatic/content/resources/before-and-after.mdx"
+      },
+      "author": {
+        "name": "Andre Vitorio",
+        "picture": "https://avatars.githubusercontent.com/u/1417109?v=4"
+      },
+      "category": [
+        {
+          "label": "Tools",
+          "value": "tools"
+        }
+      ],
+      "collection": "resources",
+      "coverImage": "",
+      "description": "A practical little developer tool for generating visual before-and-after comparisons of web changes.",
+      "publishedAt": "2026-03-25T15:30:19.658Z",
+      "slug": "before-and-after",
+      "status": "published",
+      "title": "Before and After",
+      "videoCover": "https://res.cloudinary.com/dpek791br/video/upload/v1774452618/frontpedia/vosew2shkeknlyzgsngr.mp4",
+      "websiteUrl": "https://www.jm.sv/before-and-after"
+    },
+    {
+      "__outstatic": {
+        "commit": "4b2938177fcf16beda98dfa05998a1063d59a77a",
+        "hash": "4040605211",
+        "path": "outstatic/content/resources/easing-graphs.mdx"
+      },
+      "author": {
+        "name": "Andre Vitorio",
+        "picture": "https://avatars.githubusercontent.com/u/1417109?v=4"
+      },
+      "collection": "resources",
+      "coverImage": "",
+      "description": "A curated collection of easing graphs Built by Alex & Lochie.",
+      "publishedAt": "2026-03-24T20:07:50.660Z",
+      "slug": "easing-graphs",
+      "status": "published",
+      "title": "easing.dev",
+      "videoCover": "https://res.cloudinary.com/dpek791br/video/upload/v1774383438/easing.dev_mmyw4s.mp4",
+      "websiteUrl": "https://www.easing.dev/"
+    },
+    {
+      "__outstatic": {
+        "commit": "e4b89ec75733bcc8e35b90307f8047aa9d2c7c11",
+        "hash": "3431862794",
+        "path": "outstatic/content/resources/cobe-v2.mdx"
+      },
+      "author": {
+        "name": "Andre Vitorio",
+        "picture": "https://avatars.githubusercontent.com/u/1417109?v=4"
+      },
+      "category": [
+        {
+          "label": "WebGL",
+          "value": "webGl"
+        }
+      ],
+      "collection": "resources",
+      "description": "Customizable WebGL Globe in 5kb",
+      "publishedAt": "2026-04-06T16:15:21.161Z",
+      "slug": "cobe-v2",
+      "status": "published",
+      "title": "COBE v2",
+      "videoCover": "https://res.cloudinary.com/dpek791br/video/upload/v1775489220/frontpedia/fizbv1xns7aak2p9a4io.mp4",
+      "websiteUrl": "https://cobe.vercel.app/"
+    },
+    {
+      "__outstatic": {
+        "commit": "d8922059b89b855b99f8beac6727398db8acd18e",
+        "hash": "4014454595",
+        "path": "outstatic/content/inspiration/outstatic.com.mdx"
+      },
+      "author": {
+        "name": "Andre Vitorio",
+        "picture": "https://avatars.githubusercontent.com/u/1417109?v=4"
+      },
+      "collection": "inspiration",
+      "coverImage": "/images/outstatic-MxOT.gif",
+      "publishedAt": "2026-04-13T18:15:32.983Z",
+      "slug": "outstatic.com",
+      "status": "published",
+      "tags": [
+        {
+          "label": "CMS",
+          "value": "cms"
+        },
+        {
+          "label": "Markdown",
+          "value": "markdown"
+        }
+      ],
+      "title": "Outstatic.com",
+      "websiteUrl": "https://outstatic.com"
+    },
+    {
+      "__outstatic": {
+        "commit": "36b7b5182671940553f87ef3aebc7462407f1c70",
+        "hash": "1726247576",
+        "path": "outstatic/content/_singletons/about-frontpedia.mdx"
+      },
+      "author": {
+        "name": "Andre Vitorio",
+        "picture": "https://avatars.githubusercontent.com/u/1417109?v=4"
+      },
+      "collection": "_singletons",
+      "publishedAt": "2026-03-26T13:45:54.581Z",
+      "slug": "about-frontpedia",
+      "status": "published",
+      "title": "About Frontpedia"
+    }
+  ]
+}

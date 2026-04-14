@@ -1,0 +1,48 @@
+{
+  "title": "resources",
+  "type": "object",
+  "properties": {
+    "websiteUrl": {
+      "required": false,
+      "description": "",
+      "fieldType": "String",
+      "dataType": "string",
+      "title": "Website URL"
+    },
+    "videoCover": {
+      "required": false,
+      "description": "",
+      "fieldType": "String",
+      "dataType": "string",
+      "title": "Video Cover"
+    },
+    "coverImage": {
+      "description": "",
+      "fieldType": "Image",
+      "dataType": "image",
+      "title": "Cover Image"
+    },
+    "description": {
+      "fieldType": "Text",
+      "dataType": "string",
+      "title": "Description"
+    },
+    "category": {
+      "title": "Category",
+      "description": "",
+      "required": false,
+      "fieldType": "Tags",
+      "dataType": "array",
+      "values": [
+        {
+          "label": "WebGL",
+          "value": "webGl"
+        },
+        {
+          "value": "ai",
+          "label": "AI"
+        }
+      ]
+    }
+  }
+}
