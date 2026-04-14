@@ -1,5 +1,5 @@
 <a href="https://frontpedia.com">
-  <img src="https://frontpedia.vercel.app/images/home-preview.png" alt="Frontpedia - A curated design and frontend resource website" />
+  <img src="https://frontpedia.com/images/home-preview.webp" alt="Frontpedia - A curated design and frontend resource website" />
   <h1 align="center">Frontpedia</h1>
 </a>
 
@@ -110,13 +110,6 @@ Frontpedia includes a unified analytics component that supports **Google Analyti
 - `NEXT_PUBLIC_UMAMI_HOST_URL` _(optional)_ - custom host URL for data collection
 
 Only one provider is used at a time -- Google Analytics takes priority if both are configured. Check `.env.local.example` for the full list of variables.
-
-## Stay Up-to-Date
-
-The project is continually evolving. Stay updated by starring this repository. Your support is much appreciated!
-
-![hit-the-star](https://github.com/outstatic/frontpedia/assets/1417109/0e0f3001-b419-49c8-af17-9984b4344269)
-
 
 ## Tech Stack
 
