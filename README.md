@@ -8,10 +8,9 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/outstatic/frontpedia/blob/main/LICENSE">
+  <a href="https://github.com/outstatic/frontpedia/blob/main/LICENSE.md">
     <img src="https://img.shields.io/github/license/outstatic/frontpedia?label=license&logo=github&color=f80&logoColor=fff" alt="License" />
   </a>
-  <a href="https://github.com/avitorio.frontpedia"><img src="https://img.shields.io/github/stars/avitorio.frontpedia?style=social" alt="Frontpedia's GitHub repo"></a>
 </p>
 
 <p align="center">
