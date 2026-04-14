@@ -75,7 +75,7 @@ const SubscribeForm = ({ setAlert, form }: SubmitPostModalProps) => {
           Front-End Dev & Design Delight
         </h3>
         <p>
-          The latest in front-end dev & design straight to your inbox
+          The latest in frontend dev & design straight to your inbox
           every&nbsp;week!
         </p>
       </div>

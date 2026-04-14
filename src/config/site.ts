@@ -39,7 +39,7 @@ export const isSubmitContentEnabled = resolveFeatureFlag(
 export const siteConfig = {
   name: "Frontpedia",
   description:
-    "Curated front-end inspiration, design references, UI patterns, and development resources for modern web teams.",
+    "Curated frontend inspiration, design references, UI patterns, and development resources for modern web teams.",
   creator: {
     name: "Andre Vitorio",
     handle: "@AndreVitorio",
@@ -47,7 +47,7 @@ export const siteConfig = {
   },
   locale: "en_US",
   keywords: [
-    "front-end inspiration",
+    "frontend inspiration",
     "web design inspiration",
     "ui patterns",
     "design systems",

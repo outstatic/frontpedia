@@ -51,7 +51,7 @@ export default async function Index() {
                 <p
                   className="text-base text-foreground/70"
                 >
-                  A collection of front-end and design resources
+                  A collection of frontend and design resources
                   <br className="hidden min-[368px]:block" /><span className="inline min-[368px]:hidden">&nbsp;</span>
                   by <a href="https://x.com/AndreVitorio" target="_blank" rel="noopener noreferrer" className="font-semibold hover:text-slate-700">Andre Vitorio</a>
                 </p>

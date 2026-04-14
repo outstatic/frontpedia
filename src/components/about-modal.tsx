@@ -16,7 +16,7 @@ const AboutModal: React.FC = () => {
         <DialogContent>
           <h1 className="text-xl font-semibold">About Frontpedia</h1>
           <p>
-            Frontpedia is a community-driven platform where front-end developers
+            Frontpedia is a community-driven platform where frontend developers
             and designers can share and discover content.
           </p>
           <p>
