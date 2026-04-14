@@ -28,12 +28,12 @@ const resolveSiteUrl = () => {
 
 export const isEmailListEnabled = resolveFeatureFlag(
   process.env.NEXT_PUBLIC_EMAIL_LIST_ENABLED,
-  true
+  false
 );
 
 export const isSubmitContentEnabled = resolveFeatureFlag(
   process.env.NEXT_PUBLIC_SUBMIT_CONTENT_ENABLED,
-  true
+  false
 );
 
 export const siteConfig = {

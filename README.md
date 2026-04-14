@@ -78,7 +78,7 @@ Continue reading for the remaining environment variables.
 
 ### Usage with Google Spreadsheets for the Submit Post function
 
-If `NEXT_PUBLIC_SUBMIT_CONTENT_ENABLED` is omitted or set to `true`, the following variables have to be set on the `.env.local` file:
+If `NEXT_PUBLIC_SUBMIT_CONTENT_ENABLED` is set to `true`, the following variables have to be set on the `.env.local` file:
 
 - GOOGLE_SERVICE_ACCOUNT_EMAIL
 - GOOGLE_PRIVATE_KEY
@@ -100,8 +100,8 @@ Add the following to the `.env.local` file:
 
 - RESEND_API_KEY
 - RESEND_SEGMENT_ID
-- NEXT_PUBLIC_EMAIL_LIST_ENABLED - set to `false` to hide the subscribe UI and disable the `/subscribe` endpoint. Defaults to `true` when omitted.
-- NEXT_PUBLIC_SUBMIT_CONTENT_ENABLED - set to `false` to hide the submit UI and disable the `/submit` endpoint. Defaults to `true` when omitted.
+- NEXT_PUBLIC_EMAIL_LIST_ENABLED - set to `true` to show the subscribe UI and enable the `/subscribe` endpoint. Defaults to `false` when omitted.
+- NEXT_PUBLIC_SUBMIT_CONTENT_ENABLED - set to `true` to show the submit UI and enable the `/submit` endpoint. Defaults to `false` when omitted.
 - FROM_EMAIL - the sender address for notification emails when submit content is enabled (e.g. `onboarding@resend.dev` or a verified domain address)
 - OWNER_EMAIL - the email address that receives a notification when a new post is submitted
 
