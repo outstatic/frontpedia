@@ -7,6 +7,7 @@ import { AlertCircle, Loader2, PartyPopper } from "lucide-react";
 import { UseFormReturn, useWatch } from "react-hook-form";
 import { z } from "zod";
 import { submitSchema } from "@/lib/validations/submit";
+import { cn } from "@/lib/utils";
 import {
   Form,
   FormControl,
@@ -115,41 +116,47 @@ const SubmitPostForm = ({
                   <FormControl>
                     <RadioGroup
                       onValueChange={field.onChange}
-                      defaultValue={field.value}
+                      value={field.value ?? "Resources"}
                       aria-label="Select the type of content you want to submit"
                       className="flex"
                     >
                       <div className="flex items-center gap-2">
-                      {["Resources", "Inspiration", "People"].map((type) => (
-                        <div key={type} className="flex items-center">
-                          <FormItem className="relative">
-                            <FormControl>
-                              <RadioGroupItem
-                                id={type}
-                                value={type}
-                                className="hidden"
-                              />
-                            </FormControl>
-                            <FormLabel
-                              htmlFor={type}
-                              className={`${buttonVariants({
-                                variant:
-                                  form.getValues("postType") === type
-                                    ? "default"
-                                    : "outline",
-                              })} cursor-pointer`}
-                            >
-                              {type}
-                            </FormLabel>
-                          </FormItem>
-                        </div>
-                      ))}
+                        {["Resources", "Inspiration", "People"].map((type) => {
+                          const isSelected = postType === type;
+                          return (
+                            <div key={type} className="flex items-center">
+                              <FormItem className="relative overflow-visible">
+                                <FormControl>
+                                  <RadioGroupItem
+                                    id={type}
+                                    value={type}
+                                    className="hidden"
+                                  />
+                                </FormControl>
+                                <FormLabel
+                                  htmlFor={type}
+                                  className={cn(
+                                    buttonVariants({
+                                      variant: isSelected ? "default" : "outline",
+                                    }),
+                                    "relative cursor-pointer",
+                                    isSelected
+                                      ? "after:content-[''] after:absolute after:bottom-[-24px] after:left-1/2 after:h-[15px] after:w-[15px] after:-translate-x-1/2 after:rotate-45 after:rounded-none after:bg-black"
+                                      : "after:hidden"
+                                  )}
+                                >
+                                  {type}
+                                </FormLabel>
+                              </FormItem>
+                            </div>
+                          );
+                        })}
                       </div>
                     </RadioGroup>
                   </FormControl>
                   <FormMessage />
                 </FormItem>
-                <Alert className="bg-foreground text-background min-h-18 md:min-h-0">
+                <Alert className="bg-foreground text-background min-h-18 md:min-h-0 border-foreground">
                   <AlertDescription>
                     {postTypeDescription[postType].description}
                   </AlertDescription>
