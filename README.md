@@ -38,7 +38,6 @@ An open source project by [Andre Vitorio](https://x.com/AndreVitorio).
 - 🚀 **Quick and Easy Setup**: No hassle installation
 - 💾 **Database-Free**: No need for a separate database
 - 🧩 **Custom Fields**: Tailor the data to your needs
-- 🟩 **Google Sheets Integration**: Store submissions easily
 - 💌 **Newsletter Subscription**: Integrated with Resend
 - 📺 **Video Previews**: Using Cloudinary
 
@@ -54,7 +53,7 @@ First, follow the instructions in the [Getting Started](https://outstatic.com/do
 
 Click the button below:
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Favitorio%2Ffrontpedia&env=OUTSTATIC_API_KEY,GOOGLE_SERVICE_ACCOUNT_EMAIL,GOOGLE_PRIVATE_KEY,GOOGLE_SPREADSHEET_ID,RECAPTCHA_SECRET_KEY,RESEND_API_KEY,RESEND_SEGMENT_ID&envDescription=Follow%20the%20instructions%20on%20the%20Frontpedia%20repository.&envLink=https%3A%2F%2Fgithub.com%2Favitorio%2Ffrontpedia%23installation&project-name=frontpedia&repository-name=frontpedia&demo-title=Frontpedia&demo-description=Curated%20frontend%20and%20design%20resources&demo-url=https%3A%2F%2Ffrontpedia.com&demo-image=https%3A%2F%2Ffrontpedia.com%2Fimages%2Fog-image.png)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Favitorio%2Ffrontpedia&env=OUTSTATIC_API_KEY,RECAPTCHA_SECRET_KEY,RESEND_API_KEY,RESEND_SEGMENT_ID&envDescription=Follow%20the%20instructions%20on%20the%20Frontpedia%20repository.&envLink=https%3A%2F%2Fgithub.com%2Favitorio%2Ffrontpedia%23installation&project-name=frontpedia&repository-name=frontpedia&demo-title=Frontpedia&demo-description=Curated%20frontend%20and%20design%20resources&demo-url=https%3A%2F%2Ffrontpedia.com&demo-image=https%3A%2F%2Ffrontpedia.com%2Fimages%2Fog-image.png)
 
 And follow the [Deploy with Vercel](https://outstatic.com/docs/getting-started#deploy-with-vercel) steps. 
 
@@ -73,15 +72,6 @@ pnpm dev
 ```
 
 Continue reading for the remaining environment variables.
-
-### Usage with Google Spreadsheets for the Submit Post function
-
-If `NEXT_PUBLIC_SUBMIT_CONTENT_ENABLED` is set to `true`, the following variables have to be set on the `.env.local` file:
-
-- GOOGLE_SERVICE_ACCOUNT_EMAIL
-- GOOGLE_PRIVATE_KEY
-- GOOGLE_SPREADSHEET_ID
-  To get these values you can can follow the Authentication tutorial from [this link](https://theoephraim.github.io/node-google-spreadsheet/#/getting-started/authentication).
 
 ### Set up reCAPTCHA to avoid form bot submissions -
 
@@ -138,7 +128,6 @@ Frontpedia is built on the following stack:
 - [shadcn/ui](https://ui.shadcn.com/) - components
 - [React Hook Form](https://react-hook-form.com/) - forms
 - [Zod](https://zod.dev/) - validation
-- [Google Sheets](https://www.npmjs.com/package/google-spreadsheet) - submission storage
 - [Resend](https://resend.com) - newsletter subscription & submission notifications
 - [Cloudinary](https://cloudinary.com) - video previews
 
