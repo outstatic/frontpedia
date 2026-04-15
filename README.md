@@ -41,6 +41,7 @@ An open source project by [Andre Vitorio](https://x.com/AndreVitorio).
 - 💌 **Newsletter Subscription**: Integrated with Resend
 - 📺 **Video Previews**: Using Cloudinary
 - 🤖 **Vercel's BotID**: Prevent bot submissions
+- 📈 **Analytics**: Use Google Analytics or Umami
 
 ## Installation
 
@@ -72,13 +73,9 @@ pnpm build
 pnpm dev
 ```
 
-Continue reading for the remaining environment variables.
+Visit `https://localhost:3000/outstatic` and click on **Sign in with GitHub** and follow the steps to set up your Outstatic dashboard.
 
-### Set up Outstatic for content management
-
-
-
-## Optional Setup
+## Optional Features
 
 ### Set mailing list and submission notifications
 
