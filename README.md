@@ -57,7 +57,7 @@ Click the button below:
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Foutstatic%2Ffrontpedia&env=OUTSTATIC_API_KEY&envDescription=Click%20here%20to%20generate%20your%20Outstatic%20API%20Key&envLink=https%3A%2F%2Foutstatic.com%2Fdocs%2Fgenerate-api-keys-for-vercel-projects&project-name=frontpedia&repository-name=frontpedia&demo-title=Frontpedia&demo-description=A%20frontend%20and%20design%20curation%20website&demo-url=https%3A%2F%2Ffrontpedia.com&demo-image=https%3A%2F%2Ffrontpedia.com%2Fimages%2Fog-image.png)
 
-And follow the [Deploy with Vercel](https://outstatic.com/docs/getting-started#deploy-with-vercel) steps. 
+And follow the [Deploy with Vercel](https://outstatic.com/docs/generate-api-keys-for-vercel-projects) steps. 
 
 Continue reading for the remaining environment variables.
 
