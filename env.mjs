@@ -7,14 +7,14 @@ export const env = createEnv({
     OUTSTATIC_API_KEY: z.string().optional(),
     OST_GITHUB_ID: z.string().optional(),
     OST_GITHUB_SECRET: z.string().optional(),
-    RECAPTCHA_SECRET_KEY: z.string(),
-    RESEND_API_KEY: z.string(),
+    RECAPTCHA_SECRET_KEY: z.string().optional(),
+    RESEND_API_KEY: z.string().optional(),
     RESEND_SEGMENT_ID: z.string().optional(),
     OWNER_EMAIL: z.email().optional(),
     FROM_EMAIL: z.email().optional(),
   },
   client: {
-    NEXT_PUBLIC_RECAPTCHA_SITE_KEY: z.string(),
+    NEXT_PUBLIC_RECAPTCHA_SITE_KEY: z.string().optional(),
     NEXT_PUBLIC_EMAIL_LIST_ENABLED: z.enum(["true", "false"]).optional(),
     NEXT_PUBLIC_SUBMIT_CONTENT_ENABLED: z
       .enum(["true", "false"])

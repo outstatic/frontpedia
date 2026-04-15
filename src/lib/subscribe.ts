@@ -3,11 +3,20 @@ import { Resend } from "resend";
 import { env } from "../../env.mjs";
 import { isEmailListEnabled } from "@/config/site";
 
-const resend = new Resend(env.RESEND_API_KEY);
-
 export const subscribe = async (request: Request) => {
   if (!isEmailListEnabled) {
     return NextResponse.json({ error: "Not found." }, { status: 404 });
+  }
+
+  if (
+    !env.RESEND_API_KEY ||
+    !env.RECAPTCHA_SECRET_KEY ||
+    !env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
+  ) {
+    return NextResponse.json(
+      { error: "Email list is not configured." },
+      { status: 503 }
+    );
   }
 
   if (!env.RESEND_SEGMENT_ID) {
@@ -16,6 +25,8 @@ export const subscribe = async (request: Request) => {
       { status: 503 }
     );
   }
+
+  const resend = new Resend(env.RESEND_API_KEY);
 
   const { values, token } = await request.json();
 

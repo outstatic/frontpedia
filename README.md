@@ -36,7 +36,7 @@ An open source project by [Andre Vitorio](https://x.com/AndreVitorio).
 
 - 📝 **Full-Featured Dashboard**: Powered by [Outstatic](https://outstatic.com)
 - 🚀 **Quick and Easy Setup**: No hassle installation
-- 💾 **Database-Free**: No need for a separate database
+- 💾 **Database-Free**: No need for a database
 - 🧩 **Custom Fields**: Tailor the data to your needs
 - 💌 **Newsletter Subscription**: Integrated with Resend
 - 📺 **Video Previews**: Using Cloudinary
@@ -53,7 +53,7 @@ First, follow the instructions in the [Getting Started](https://outstatic.com/do
 
 Click the button below:
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Favitorio%2Ffrontpedia&env=OUTSTATIC_API_KEY,RECAPTCHA_SECRET_KEY,RESEND_API_KEY,RESEND_SEGMENT_ID&envDescription=Follow%20the%20instructions%20on%20the%20Frontpedia%20repository.&envLink=https%3A%2F%2Fgithub.com%2Favitorio%2Ffrontpedia%23installation&project-name=frontpedia&repository-name=frontpedia&demo-title=Frontpedia&demo-description=Curated%20frontend%20and%20design%20resources&demo-url=https%3A%2F%2Ffrontpedia.com&demo-image=https%3A%2F%2Ffrontpedia.com%2Fimages%2Fog-image.png)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Foutstatic%2Ffrontpedia&env=OUTSTATIC_API_KEY&envDescription=Follow%20the%20instructions%20on%20the%20Frontpedia%20repository.&envLink=https%3A%2F%2Fgithub.com%2Foutstatic%2Ffrontpedia%23installation&project-name=frontpedia&repository-name=frontpedia&demo-title=Frontpedia&demo-description=Curated%20frontend%20and%20design%20resources&demo-url=https%3A%2F%2Ffrontpedia.com&demo-image=https%3A%2F%2Ffrontpedia.com%2Fimages%2Fog-image.png)
 
 And follow the [Deploy with Vercel](https://outstatic.com/docs/getting-started#deploy-with-vercel) steps. 
 
@@ -72,6 +72,8 @@ pnpm dev
 ```
 
 Continue reading for the remaining environment variables.
+
+### Set up Outstatic for content management
 
 ### Set up reCAPTCHA to avoid form bot submissions -
 

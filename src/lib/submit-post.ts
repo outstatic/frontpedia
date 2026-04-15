@@ -2,8 +2,6 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { env } from "../../env.mjs";
 
-const resend = new Resend(env.RESEND_API_KEY);
-
 export const submitPost = async (request: Request) => {
   const { values, token } = await request.json();
 
@@ -14,12 +12,20 @@ export const submitPost = async (request: Request) => {
   const fromEmail = env.FROM_EMAIL;
   const ownerEmail = env.OWNER_EMAIL;
 
-  if (!fromEmail || !ownerEmail) {
+  if (
+    !fromEmail ||
+    !ownerEmail ||
+    !env.RESEND_API_KEY ||
+    !env.RECAPTCHA_SECRET_KEY ||
+    !env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
+  ) {
     return NextResponse.json(
       { error: "Submit content is not configured." },
       { status: 503 }
     );
   }
+
+  const resend = new Resend(env.RESEND_API_KEY);
 
   try {
     return fetch("https://www.google.com/recaptcha/api/siteverify", {
