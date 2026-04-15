@@ -6,7 +6,6 @@ import { AlertCircle, Loader2, PartyPopper } from "lucide-react";
 import { UseFormReturn } from "react-hook-form";
 import { z } from "zod";
 import { Form, FormControl, FormField, FormItem, FormMessage } from "./ui/form";
-import { useReCaptcha } from "next-recaptcha-v3";
 import { subscribeSchema } from "@/lib/validations/subscribe";
 
 const alertMessages = {
@@ -39,25 +38,17 @@ type SubmitPostModalProps = {
 
 const SubscribeForm = ({ setAlert, form }: SubmitPostModalProps) => {
   const [submitting, setSubmitting] = useState<boolean>(false);
-  const { executeRecaptcha } = useReCaptcha();
 
   const onSubmit = useCallback(
     async (values: z.infer<typeof subscribeSchema>) => {
       setSubmitting(true);
-
-      const token = await executeRecaptcha("submitFrontpediaContent");
-
-      if (!token) {
-        setAlert(alertMessages.error);
-        setSubmitting(false);
-      }
 
       const response = await fetch("/subscribe", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ values, token }),
+        body: JSON.stringify({ values }),
       });
 
       const data = await response.json();
@@ -65,7 +56,7 @@ const SubscribeForm = ({ setAlert, form }: SubmitPostModalProps) => {
       setAlert(data.success ? alertMessages.success : alertMessages.error);
       setSubmitting(false);
     },
-    [executeRecaptcha]
+    [setAlert]
   );
 
   return (

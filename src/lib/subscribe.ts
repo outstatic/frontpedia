@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { checkBotId } from "botid/server";
 import { env } from "../../env.mjs";
 import { isEmailListEnabled } from "@/config/site";
 
@@ -9,9 +10,7 @@ export const subscribe = async (request: Request) => {
   }
 
   if (
-    !env.RESEND_API_KEY ||
-    !env.RECAPTCHA_SECRET_KEY ||
-    !env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
+    !env.RESEND_API_KEY
   ) {
     return NextResponse.json(
       { error: "Email list is not configured." },
@@ -27,31 +26,19 @@ export const subscribe = async (request: Request) => {
   }
 
   const resend = new Resend(env.RESEND_API_KEY);
+  const verification = await checkBotId();
 
-  const { values, token } = await request.json();
+  const { values } = await request.json();
 
-  if (!values.email || !token || Object.keys(values).length > 1) {
+  if (verification.isBot) {
+    return NextResponse.json({ error: "Bot detected." }, { status: 403 });
+  }
+
+  if (!values.email || Object.keys(values).length > 1) {
     return NextResponse.json({ error: "Bad request." }, { status: 400 });
   }
 
   try {
-    if (env.NODE_ENV === "production") {
-      const reCaptchaRes = await fetch(
-        "https://www.google.com/recaptcha/api/siteverify",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-          },
-          body: `secret=${env.RECAPTCHA_SECRET_KEY}&response=${token || ""}`,
-        }
-      ).then((res) => res.json());
-
-      if (!reCaptchaRes?.score || reCaptchaRes.score <= 0.5) {
-        return NextResponse.json({ error: "Captcha failed." }, { status: 400 });
-      }
-    }
-
     const { data: contact, error: createError } =
       await resend.contacts.create({
         email: values.email,

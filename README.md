@@ -40,6 +40,7 @@ An open source project by [Andre Vitorio](https://x.com/AndreVitorio).
 - 🧩 **Custom Fields**: Tailor the data to your needs
 - 💌 **Newsletter Subscription**: Integrated with Resend
 - 📺 **Video Previews**: Using Cloudinary
+- 🤖 **Vercel's BotID**: Prevent bot submissions
 
 ## Installation
 
@@ -75,16 +76,11 @@ Continue reading for the remaining environment variables.
 
 ### Set up Outstatic for content management
 
-### Set up reCAPTCHA to avoid form bot submissions -
 
-Add these to your the `.env.local` file:
 
-- NEXT_PUBLIC_RECAPTCHA_SITE_KEY
-- RECAPTCHA_SECRET_KEY
+## Optional Setup
 
-To get these values visit [this link](https://www.google.com/recaptcha/admin/create).
-
-### Set up Resend for mailing list and submission notifications
+### Set mailing list and submission notifications
 
 Add the following to the `.env.local` file:
 
@@ -92,12 +88,14 @@ Add the following to the `.env.local` file:
 - RESEND_SEGMENT_ID
 - NEXT_PUBLIC_EMAIL_LIST_ENABLED - set to `true` to show the subscribe UI and enable the `/subscribe` endpoint. Defaults to `false` when omitted.
 - NEXT_PUBLIC_SUBMIT_CONTENT_ENABLED - set to `true` to show the submit UI and enable the `/submit` endpoint. Defaults to `false` when omitted.
-- FROM_EMAIL - the sender address for notification emails when submit content is enabled (e.g. `onboarding@resend.dev` or a verified domain address)
+- FROM_EMAIL - the sender address for notification emails when submit content is enabled (e.g. `submissions@frontpedia.com`)
 - OWNER_EMAIL - the email address that receives a notification when a new post is submitted
 
 To get your API key and segment ID, visit [resend.com](https://resend.com).
 
-## Optional Setup
+### Set up Vercel BotID to protect form submissions
+
+If the project is on Vercel, enable BotID to protect form submissions.
 
 ### Analytics
 

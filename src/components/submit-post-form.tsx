@@ -17,7 +17,6 @@ import {
   FormMessage,
 } from "./ui/form";
 import { Alert, AlertDescription } from "./ui/alert";
-import { useReCaptcha } from "next-recaptcha-v3";
 
 const alertMessages = {
   success: {
@@ -67,7 +66,6 @@ const SubmitPostForm = ({
   handleCloseModal,
 }: SubmitPostModalProps) => {
   const [submitting, setSubmitting] = useState<boolean>(false);
-  const { executeRecaptcha } = useReCaptcha();
 
   const postType = useWatch({
     control: form.control,
@@ -79,19 +77,12 @@ const SubmitPostForm = ({
     async (values: z.infer<typeof submitSchema>) => {
       setSubmitting(true);
 
-      const token = await executeRecaptcha("submitFrontpediaContent");
-
-      if (!token) {
-        setAlert(alertMessages.error);
-        setSubmitting(false);
-      }
-
       const response = await fetch("/submit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ values, token }),
+        body: JSON.stringify({ values }),
       });
 
       const data = await response.json();
@@ -99,7 +90,7 @@ const SubmitPostForm = ({
       setAlert(data.success ? alertMessages.success : alertMessages.error);
       setSubmitting(false);
     },
-    [executeRecaptcha]
+    [setAlert]
   );
 
   return (

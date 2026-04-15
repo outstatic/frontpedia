@@ -7,7 +7,6 @@ import { submitSchema } from "@/lib/validations/submit";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Dialog, DialogContent } from "./ui/dialog";
 import { ModalContext } from "@/lib/providers/modal";
-import { CaptchaProvider } from "@/lib/providers/captcha";
 import SubmitPostForm from "./submit-post-form";
 
 type AlertMessagesType = {
@@ -52,13 +51,11 @@ export const SubmitPostModal: React.FC = () => {
               </Button>
             </div>
           ) : (
-            <CaptchaProvider>
-              <SubmitPostForm
-                form={form}
-                handleCloseModal={handleCloseModal}
-                setAlert={setAlert}
-              />
-            </CaptchaProvider>
+            <SubmitPostForm
+              form={form}
+              handleCloseModal={handleCloseModal}
+              setAlert={setAlert}
+            />
           )}
         </DialogContent>
       </Dialog>

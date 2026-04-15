@@ -1,4 +1,5 @@
 import "./env.mjs"
+import { withBotId } from "botid/next/config";
 
 async function getRewrites() {
   return {
@@ -33,4 +34,4 @@ const nextConfig = {
   rewrites: getRewrites,
 };
 
-export default nextConfig;
+export default withBotId(nextConfig);

@@ -7,19 +7,19 @@ export const env = createEnv({
     OUTSTATIC_API_KEY: z.string().optional(),
     OST_GITHUB_ID: z.string().optional(),
     OST_GITHUB_SECRET: z.string().optional(),
-    RECAPTCHA_SECRET_KEY: z.string().optional(),
     RESEND_API_KEY: z.string().optional(),
     RESEND_SEGMENT_ID: z.string().optional(),
     OWNER_EMAIL: z.email().optional(),
     FROM_EMAIL: z.email().optional(),
   },
   client: {
-    NEXT_PUBLIC_RECAPTCHA_SITE_KEY: z.string().optional(),
     NEXT_PUBLIC_EMAIL_LIST_ENABLED: z.enum(["true", "false"]).optional(),
     NEXT_PUBLIC_SUBMIT_CONTENT_ENABLED: z
       .enum(["true", "false"])
       .optional(),
     NEXT_PUBLIC_UMAMI_WEBSITE_ID: z.string().optional(),
+    NEXT_PUBLIC_UMAMI_HOST: z.string().optional(),
+    NEXT_PUBLIC_UMAMI_HOST_URL: z.string().optional(),
     NEXT_PUBLIC_UMAMI_DISABLE_LOCALHOST_TRACKING: z.string().optional(),
   },
   runtimeEnv: {
@@ -28,12 +28,10 @@ export const env = createEnv({
     OST_GITHUB_SECRET: process.env.OST_GITHUB_SECRET,
     OST_TOKEN_SECRET: process.env.OST_TOKEN_SECRET,
     NODE_ENV: process.env.NODE_ENV,
-    NEXT_PUBLIC_RECAPTCHA_SITE_KEY: process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY,
     NEXT_PUBLIC_EMAIL_LIST_ENABLED:
       process.env.NEXT_PUBLIC_EMAIL_LIST_ENABLED,
     NEXT_PUBLIC_SUBMIT_CONTENT_ENABLED:
       process.env.NEXT_PUBLIC_SUBMIT_CONTENT_ENABLED,
-    RECAPTCHA_SECRET_KEY: process.env.RECAPTCHA_SECRET_KEY,
     RESEND_API_KEY: process.env.RESEND_API_KEY,
     RESEND_SEGMENT_ID: process.env.RESEND_SEGMENT_ID,
     OWNER_EMAIL: process.env.OWNER_EMAIL,

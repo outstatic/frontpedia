@@ -1,11 +1,17 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { checkBotId } from "botid/server";
 import { env } from "../../env.mjs";
 
 export const submitPost = async (request: Request) => {
-  const { values, token } = await request.json();
+  const verification = await checkBotId();
+  const { values } = await request.json();
 
-  if (!values?.postType || !token) {
+  if (verification.isBot) {
+    return NextResponse.json({ error: "Bot detected." }, { status: 403 });
+  }
+
+  if (!values?.postType) {
     return NextResponse.json({ error: "Bad request." }, { status: 400 });
   }
 
@@ -15,9 +21,7 @@ export const submitPost = async (request: Request) => {
   if (
     !fromEmail ||
     !ownerEmail ||
-    !env.RESEND_API_KEY ||
-    !env.RECAPTCHA_SECRET_KEY ||
-    !env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
+    !env.RESEND_API_KEY
   ) {
     return NextResponse.json(
       { error: "Submit content is not configured." },
@@ -28,42 +32,28 @@ export const submitPost = async (request: Request) => {
   const resend = new Resend(env.RESEND_API_KEY);
 
   try {
-    return fetch("https://www.google.com/recaptcha/api/siteverify", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-      body: `secret=${env.RECAPTCHA_SECRET_KEY}&response=${token || ""}`,
-    })
-      .then((reCaptchaRes) => reCaptchaRes.json())
-      .then(async (reCaptchaRes) => {
-        if (reCaptchaRes?.score > 0.5) {
-          const rows: Record<string, string> = {
-            date: new Date().toLocaleString().replace(",", ""),
-          };
+    const rows: Record<string, string> = {
+      date: new Date().toLocaleString().replace(",", ""),
+    };
 
-          Object.keys(values).forEach((key) => {
-            if (values[key] && key !== "postType") {
-              rows[key] = values[key];
-            }
-          });
+    Object.keys(values).forEach((key) => {
+      if (values[key] && key !== "postType") {
+        rows[key] = values[key];
+      }
+    });
 
-          const details = Object.entries(rows)
-            .map(([key, val]) => `<li><strong>${key}:</strong> ${val}</li>`)
-            .join("");
+    const details = Object.entries(rows)
+      .map(([key, val]) => `<li><strong>${key}:</strong> ${val}</li>`)
+      .join("");
 
-          await resend.emails.send({
-            from: fromEmail,
-            to: ownerEmail,
-            subject: `New submission: ${values.postType}`,
-            html: `<h2>New ${values.postType} submission</h2><ul>${details}</ul>`,
-          });
+    await resend.emails.send({
+      from: fromEmail,
+      to: ownerEmail,
+      subject: `New submission: ${values.postType}`,
+      html: `<h2>New ${values.postType} submission</h2><ul>${details}</ul>`,
+    });
 
-          return NextResponse.json({ success: true }, { status: 200 });
-        }
-
-        return NextResponse.json({ error: "Captcha failed." }, { status: 400 });
-      });
+    return NextResponse.json({ success: true }, { status: 200 });
   } catch (error) {
     return NextResponse.json(
       { error: "Error submitting your request. Please, try again later." },

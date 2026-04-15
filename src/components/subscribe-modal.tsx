@@ -6,7 +6,6 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Dialog, DialogContent } from "./ui/dialog";
 import { ModalContext } from "@/lib/providers/modal";
-import { CaptchaProvider } from "@/lib/providers/captcha";
 import { subscribeSchema } from "@/lib/validations/subscribe";
 import SubscribeForm from "./subscribe-form";
 
@@ -50,13 +49,11 @@ const SubscribeModal: React.FC = () => {
               </Button>
             </div>
           ) : (
-            <CaptchaProvider>
-              <SubscribeForm
-                form={form}
-                handleCloseModal={handleCloseModal}
-                setAlert={setAlert}
-              />
-            </CaptchaProvider>
+            <SubscribeForm
+              form={form}
+              handleCloseModal={handleCloseModal}
+              setAlert={setAlert}
+            />
           )}
         </DialogContent>
       </Dialog>
