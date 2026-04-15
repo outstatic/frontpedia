@@ -133,8 +133,3 @@ Here's how you can contribute:
 <a href="https://github.com/outstatic/frontpedia/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=outstatic/frontpedia" />
 </a>
-
-
-## License
-
-Licensed under the [Apache-2.0 license](https://www.apache.org/licenses/LICENSE-2.0).
