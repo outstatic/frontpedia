@@ -40,7 +40,7 @@ export const SubmitPostModal: React.FC = () => {
   return (
     <>
       <Dialog open={submitOpen} onOpenChange={handleCloseModal}>
-        <DialogContent initialFocus={false}>
+        <DialogContent initialFocus={false} className="outline-0">
           {alert ? (
             <div className="flex flex-col space-y-4 items-center text">
               {alert.icon}

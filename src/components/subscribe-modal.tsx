@@ -38,7 +38,7 @@ const SubscribeModal: React.FC = () => {
   return (
     <>
       <Dialog open={subscribeOpen} onOpenChange={handleCloseModal}>
-        <DialogContent initialFocus={false}>
+        <DialogContent initialFocus={false} className="outline-0">
           {alert ? (
             <div className="flex flex-col space-y-4 items-center text">
               {alert.icon}
