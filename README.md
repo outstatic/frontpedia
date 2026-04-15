@@ -19,8 +19,7 @@
   <a href="#to-deploy-with-vercel"><strong>Deploy With Vercel</strong></a> ·
   <a href="#setting-up-locally"><strong>Setting Up Locally</strong></a> ·
   <a href="#tech-stack"><strong>Tech Stack</strong></a> ·
-  <a href="#contributing"><strong>Contributing</strong></a> ·
-  <a href="#license"><strong>License</strong></a>
+  <a href="#contributing"><strong>Contributing</strong></a>
 </p>
 <br/>
 
@@ -129,6 +128,8 @@ Here's how you can contribute:
 
 - [Open an issue](https://github.com/outstatic/frontpedia/issues) if you believe you've encountered a bug.
 - Make a [pull request](https://github.com/outstatic/frontpedia/pull) to add new features/make quality-of-life improvements/fix bugs.
+
+### Contributors
 
 <a href="https://github.com/outstatic/frontpedia/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=outstatic/frontpedia" />
