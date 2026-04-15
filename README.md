@@ -73,7 +73,9 @@ pnpm build
 pnpm dev
 ```
 
-Visit `https://localhost:3000/outstatic` and click on **Sign in with GitHub** and follow the steps to set up your Outstatic dashboard.
+Open `https://localhost:3000/outstatic`
+
+Click on **Sign in with GitHub** and follow the steps to set up your Outstatic dashboard.
 
 ## Optional Features
 
